@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.groupBoxNewItem = new System.Windows.Forms.GroupBox();
-            this.groupBoxTodo = new System.Windows.Forms.GroupBox();
-            this.groupBoxCompleted = new System.Windows.Forms.GroupBox();
-            this.labelName = new System.Windows.Forms.Label();
-            this.labelQuantity = new System.Windows.Forms.Label();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxQuantity = new System.Windows.Forms.TextBox();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonMarkComplete = new System.Windows.Forms.Button();
-            this.buttonClear = new System.Windows.Forms.Button();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.labelQuantity = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
+            this.groupBoxTodo = new System.Windows.Forms.GroupBox();
             this.listBoxTodo = new System.Windows.Forms.ListBox();
+            this.buttonMarkComplete = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.groupBoxCompleted = new System.Windows.Forms.GroupBox();
+            this.progressBarTodo = new System.Windows.Forms.ProgressBar();
             this.listBoxComplete = new System.Windows.Forms.ListBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.buttonClear = new System.Windows.Forms.Button();
             this.groupBoxNewItem.SuspendLayout();
             this.groupBoxTodo.SuspendLayout();
             this.groupBoxCompleted.SuspendLayout();
@@ -61,6 +61,48 @@
             this.groupBoxNewItem.TabStop = false;
             this.groupBoxNewItem.Text = "New Item";
             // 
+            // textBoxQuantity
+            // 
+            this.textBoxQuantity.Location = new System.Drawing.Point(87, 104);
+            this.textBoxQuantity.Name = "textBoxQuantity";
+            this.textBoxQuantity.Size = new System.Drawing.Size(206, 23);
+            this.textBoxQuantity.TabIndex = 4;
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.Location = new System.Drawing.Point(87, 62);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(206, 23);
+            this.textBoxName.TabIndex = 3;
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(99, 180);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(115, 32);
+            this.buttonAdd.TabIndex = 2;
+            this.buttonAdd.Text = "Add";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // labelQuantity
+            // 
+            this.labelQuantity.AutoSize = true;
+            this.labelQuantity.Location = new System.Drawing.Point(20, 108);
+            this.labelQuantity.Name = "labelQuantity";
+            this.labelQuantity.Size = new System.Drawing.Size(53, 15);
+            this.labelQuantity.TabIndex = 1;
+            this.labelQuantity.Text = "Quantity";
+            // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.Location = new System.Drawing.Point(20, 66);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(39, 15);
+            this.labelName.TabIndex = 0;
+            this.labelName.Text = "Name";
+            // 
             // groupBoxTodo
             // 
             this.groupBoxTodo.Controls.Add(this.listBoxTodo);
@@ -73,67 +115,14 @@
             this.groupBoxTodo.TabStop = false;
             this.groupBoxTodo.Text = "To do";
             // 
-            // groupBoxCompleted
+            // listBoxTodo
             // 
-            this.groupBoxCompleted.Controls.Add(this.progressBar1);
-            this.groupBoxCompleted.Controls.Add(this.listBoxComplete);
-            this.groupBoxCompleted.Controls.Add(this.buttonClear);
-            this.groupBoxCompleted.Location = new System.Drawing.Point(740, 71);
-            this.groupBoxCompleted.Name = "groupBoxCompleted";
-            this.groupBoxCompleted.Size = new System.Drawing.Size(312, 218);
-            this.groupBoxCompleted.TabIndex = 2;
-            this.groupBoxCompleted.TabStop = false;
-            this.groupBoxCompleted.Text = "Completed";
-            // 
-            // labelName
-            // 
-            this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(20, 66);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(39, 15);
-            this.labelName.TabIndex = 0;
-            this.labelName.Text = "Name";
-            // 
-            // labelQuantity
-            // 
-            this.labelQuantity.AutoSize = true;
-            this.labelQuantity.Location = new System.Drawing.Point(20, 108);
-            this.labelQuantity.Name = "labelQuantity";
-            this.labelQuantity.Size = new System.Drawing.Size(53, 15);
-            this.labelQuantity.TabIndex = 1;
-            this.labelQuantity.Text = "Quantity";
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Location = new System.Drawing.Point(99, 180);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(115, 32);
-            this.buttonAdd.TabIndex = 2;
-            this.buttonAdd.Text = "Add";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            // 
-            // textBoxName
-            // 
-            this.textBoxName.Location = new System.Drawing.Point(87, 62);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(206, 23);
-            this.textBoxName.TabIndex = 3;
-            // 
-            // textBoxQuantity
-            // 
-            this.textBoxQuantity.Location = new System.Drawing.Point(87, 104);
-            this.textBoxQuantity.Name = "textBoxQuantity";
-            this.textBoxQuantity.Size = new System.Drawing.Size(206, 23);
-            this.textBoxQuantity.TabIndex = 4;
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.Location = new System.Drawing.Point(30, 180);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(115, 32);
-            this.buttonDelete.TabIndex = 5;
-            this.buttonDelete.Text = "Delete";
-            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.listBoxTodo.FormattingEnabled = true;
+            this.listBoxTodo.ItemHeight = 15;
+            this.listBoxTodo.Location = new System.Drawing.Point(6, 22);
+            this.listBoxTodo.Name = "listBoxTodo";
+            this.listBoxTodo.Size = new System.Drawing.Size(300, 154);
+            this.listBoxTodo.TabIndex = 7;
             // 
             // buttonMarkComplete
             // 
@@ -143,24 +132,36 @@
             this.buttonMarkComplete.TabIndex = 6;
             this.buttonMarkComplete.Text = "Mark as complete";
             this.buttonMarkComplete.UseVisualStyleBackColor = true;
+            this.buttonMarkComplete.Click += new System.EventHandler(this.buttonMarkComplete_Click);
             // 
-            // buttonClear
+            // buttonDelete
             // 
-            this.buttonClear.Location = new System.Drawing.Point(168, 180);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(115, 32);
-            this.buttonClear.TabIndex = 7;
-            this.buttonClear.Text = "Clear";
-            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonDelete.Location = new System.Drawing.Point(30, 180);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(115, 32);
+            this.buttonDelete.TabIndex = 5;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
-            // listBoxTodo
+            // groupBoxCompleted
             // 
-            this.listBoxTodo.FormattingEnabled = true;
-            this.listBoxTodo.ItemHeight = 15;
-            this.listBoxTodo.Location = new System.Drawing.Point(6, 22);
-            this.listBoxTodo.Name = "listBoxTodo";
-            this.listBoxTodo.Size = new System.Drawing.Size(300, 154);
-            this.listBoxTodo.TabIndex = 7;
+            this.groupBoxCompleted.Controls.Add(this.progressBarTodo);
+            this.groupBoxCompleted.Controls.Add(this.listBoxComplete);
+            this.groupBoxCompleted.Controls.Add(this.buttonClear);
+            this.groupBoxCompleted.Location = new System.Drawing.Point(740, 71);
+            this.groupBoxCompleted.Name = "groupBoxCompleted";
+            this.groupBoxCompleted.Size = new System.Drawing.Size(312, 218);
+            this.groupBoxCompleted.TabIndex = 2;
+            this.groupBoxCompleted.TabStop = false;
+            this.groupBoxCompleted.Text = "Completed";
+            // 
+            // progressBarTodo
+            // 
+            this.progressBarTodo.Location = new System.Drawing.Point(30, 180);
+            this.progressBarTodo.Name = "progressBarTodo";
+            this.progressBarTodo.Size = new System.Drawing.Size(115, 32);
+            this.progressBarTodo.TabIndex = 9;
             // 
             // listBoxComplete
             // 
@@ -171,13 +172,15 @@
             this.listBoxComplete.Size = new System.Drawing.Size(300, 154);
             this.listBoxComplete.TabIndex = 8;
             // 
-            // progressBar1
+            // buttonClear
             // 
-            this.progressBar1.Location = new System.Drawing.Point(30, 180);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(115, 32);
-            this.progressBar1.TabIndex = 9;
-            this.progressBar1.Value = 50;
+            this.buttonClear.Location = new System.Drawing.Point(168, 180);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(115, 32);
+            this.buttonClear.TabIndex = 7;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // MainForm
             // 
@@ -211,7 +214,7 @@
         private System.Windows.Forms.ListBox listBoxTodo;
         private System.Windows.Forms.Button buttonMarkComplete;
         private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar progressBarTodo;
         private System.Windows.Forms.ListBox listBoxComplete;
         private System.Windows.Forms.Button buttonClear;
     }
